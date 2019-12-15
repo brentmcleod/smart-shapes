@@ -1,0 +1,69 @@
+{
+  "shapeLayout": {
+    "arrows": {
+      "svgViewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 212,
+        "h": 240
+      },
+      "assets": [
+        {
+          "type": "AtomicShape",
+          "props": {
+            "type": "Arrow",
+            "x": 12,
+            "y": 100,
+            "shaftLength": 60,
+            "shaftWidth": 40,
+            "headLength": 40,
+            "headWidth": 70,
+            "scale": 2
+          }
+        },
+        {
+          "type": "Icon",
+          "props": {
+            "x": 57,
+            "y": 0,
+            "w": 50,
+            "h": 50,
+            "scale": 1.5,
+            "scaleIcon": 0.8,
+            "stemLength": 40,
+            "stemWidth": 1,
+            "background": "circle"
+          }
+        },
+        {
+          "type": "Indicator",
+          "props": {
+            "x": 0,
+            "y": 118
+          }
+        },
+        {
+          "type": "Label",
+          "props": {
+            "x": 16,
+            "y": 134,
+            "w": 140,
+            "h": 72
+          }
+        }
+      ]
+    }
+  },
+  "diagramLayout": {
+    "arrows": {
+      "svgViewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 1200,
+        "h": 240
+      },
+      "assets": [],
+      "transforms": []
+    }
+  }
+}

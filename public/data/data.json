@@ -1,0 +1,288 @@
+{
+  "screens": [
+    {
+      "screen_id": 1,
+      "display_order_id": 1,
+      "progression": "linear",
+      "screen_type": "smart_diagram",
+      "screen_display_type": "arrows",
+      "include_instructions": true,
+      "locale": {
+        "en": {
+          "title": "Screen title goes here...",
+          "instructions": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit ante consectetur consectetur varius. Nunc eros lorem, malesuada nec vulputate sed, volutpat ut massa. Sed faucibus viverra enim et varius.</p>"
+        }
+      },
+      "assets": {
+        "assets": {
+          "background": {
+            "width": 2024,
+            "height": 1350,
+            "src": "assets/backgrounds/489220129e07de85aa32dec67ee474e9.jpg"
+          }
+        }
+      },
+      "sub_screens": [
+        {
+          "display_order_id": 1,
+          "screen_rule_type": "required",
+          "screen_type_code": "content",
+          "content_layout_type": "right_small_flyout",
+          "screen_id": 2,
+          "assets": {
+            "icon": {
+              "name": "World Icon",
+              "width": 50,
+              "height": 50,
+              "src": "assets/icons/icon1.svg",
+              "constant": "icon"
+            }
+          },
+          "locale": {
+            "en": {
+              "title": "Label 1"
+            }
+          },
+          "objects": [
+            {
+              "asset_id": 1,
+              "show_title": true,
+              "progression": "continue",
+              "asset_type_code": "text",
+              "display_order_id": 1,
+              "locale": {
+                "en": {
+                  "label": "Lorem Ipsum 1",
+                  "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit ante consectetur consectetur varius. Nunc eros lorem, malesuada nec vulputate sed, volutpat ut massa. Sed faucibus viverra enim et varius. Cras pretium volutpat elit, a posuere libero pretium vitae. Cras posuere justo risus, in gravida leo iaculis eu. Nunc hendrerit ultricies efficitur. Praesent accumsan tellus ac purus rhoncus dictum. Sed ut pharetra libero, eget consectetur magna. In iaculis facilisis tincidunt. Vestibulum semper sem at justo sagittis posuere.</p><p>Nulla vitae viverra turpis. Quisque iaculis turpis purus, vulputate ultricies ipsum cursus nec. Aliquam tempor sagittis feugiat. Quisque et purus dignissim, sodales felis et, porta elit. Phasellus dapibus libero diam, id accumsan magna scelerisque id. Vivamus facilisis ex sit amet est congue ornare.</p>"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "display_order_id": 2,
+          "screen_rule_type": "required",
+          "screen_type_code": "content",
+          "content_layout_type": "right_small_flyout",
+          "screen_id": 3,
+          "assets": {
+            "icon": {
+              "name": "Lightbulb Icon",
+              "width": 50,
+              "height": 50,
+              "src": "assets/icons/icon2.svg",
+              "constant": "icon"
+            }
+          },
+          "locale": {
+            "en": {
+              "title": "Label 2"
+            }
+          },
+          "objects": [
+            {
+              "asset_id": 2,
+              "show_title": true,
+              "progression": "continue",
+              "asset_type_code": "text",
+              "display_order_id": 1,
+              "locale": {
+                "en": {
+                  "label": "Lorem Ipsum 2",
+                  "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit ante consectetur consectetur varius. Nunc eros lorem, malesuada nec vulputate sed, volutpat ut massa. Sed faucibus viverra enim et varius. Cras pretium volutpat elit, a posuere libero pretium vitae. Cras posuere justo risus, in gravida leo iaculis eu. Nunc hendrerit ultricies efficitur. Praesent accumsan tellus ac purus rhoncus dictum. Sed ut pharetra libero, eget consectetur magna. In iaculis facilisis tincidunt. Vestibulum semper sem at justo sagittis posuere.</p><p>Nulla vitae viverra turpis. Quisque iaculis turpis purus, vulputate ultricies ipsum cursus nec. Aliquam tempor sagittis feugiat. Quisque et purus dignissim, sodales felis et, porta elit. Phasellus dapibus libero diam, id accumsan magna scelerisque id. Vivamus facilisis ex sit amet est congue ornare.</p>"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "display_order_id": 3,
+          "screen_rule_type": "required",
+          "screen_type_code": "content",
+          "content_layout_type": "right_small_flyout",
+          "screen_id": 4,
+          "assets": {
+            "icon": {
+              "name": "Trend Line Icon",
+              "width": 50,
+              "height": 50,
+              "src": "assets/icons/icon3.svg",
+              "constant": "icon"
+            }
+          },
+          "locale": {
+            "en": {
+              "title": "Label 3"
+            }
+          },
+          "objects": [
+            {
+              "asset_id": 3,
+              "show_title": true,
+              "progression": "continue",
+              "asset_type_code": "text",
+              "display_order_id": 1,
+              "locale": {
+                "en": {
+                  "label": "Lorem Ipsum 3",
+                  "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit ante consectetur consectetur varius. Nunc eros lorem, malesuada nec vulputate sed, volutpat ut massa. Sed faucibus viverra enim et varius. Cras pretium volutpat elit, a posuere libero pretium vitae. Cras posuere justo risus, in gravida leo iaculis eu. Nunc hendrerit ultricies efficitur. Praesent accumsan tellus ac purus rhoncus dictum. Sed ut pharetra libero, eget consectetur magna. In iaculis facilisis tincidunt. Vestibulum semper sem at justo sagittis posuere.</p><p>Nulla vitae viverra turpis. Quisque iaculis turpis purus, vulputate ultricies ipsum cursus nec. Aliquam tempor sagittis feugiat. Quisque et purus dignissim, sodales felis et, porta elit. Phasellus dapibus libero diam, id accumsan magna scelerisque id. Vivamus facilisis ex sit amet est congue ornare.</p>"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "display_order_id": 4,
+          "screen_rule_type": "required",
+          "screen_type_code": "content",
+          "content_layout_type": "right_small_flyout",
+          "screen_id": 5,
+          "assets": {
+            "icon": {
+              "name": "Basketball Icon",
+              "width": 50,
+              "height": 50,
+              "src": "assets/icons/icon4.svg",
+              "constant": "icon"
+            }
+          },
+          "locale": {
+            "en": {
+              "title": "Label 4"
+            }
+          },
+          "objects": [
+            {
+              "asset_id": 4,
+              "show_title": true,
+              "progression": "continue",
+              "asset_type_code": "text",
+              "display_order_id": 1,
+              "locale": {
+                "en": {
+                  "label": "Lorem Ipsum 4",
+                  "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit ante consectetur consectetur varius. Nunc eros lorem, malesuada nec vulputate sed, volutpat ut massa. Sed faucibus viverra enim et varius. Cras pretium volutpat elit, a posuere libero pretium vitae. Cras posuere justo risus, in gravida leo iaculis eu. Nunc hendrerit ultricies efficitur. Praesent accumsan tellus ac purus rhoncus dictum. Sed ut pharetra libero, eget consectetur magna. In iaculis facilisis tincidunt. Vestibulum semper sem at justo sagittis posuere.</p><p>Nulla vitae viverra turpis. Quisque iaculis turpis purus, vulputate ultricies ipsum cursus nec. Aliquam tempor sagittis feugiat. Quisque et purus dignissim, sodales felis et, porta elit. Phasellus dapibus libero diam, id accumsan magna scelerisque id. Vivamus facilisis ex sit amet est congue ornare.</p>"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "display_order_id": 5,
+          "screen_rule_type": "required",
+          "screen_type_code": "content",
+          "content_layout_type": "right_small_flyout",
+          "screen_id": 6,
+          "assets": {
+            "icon": {
+              "name": "Videogames Icon",
+              "width": 50,
+              "height": 50,
+              "src": "assets/icons/icon5.svg",
+              "constant": "icon"
+            }
+          },
+          "locale": {
+            "en": {
+              "title": "Label 5"
+            }
+          },
+          "objects": [
+            {
+              "asset_id": 5,
+              "show_title": true,
+              "progression": "continue",
+              "asset_type_code": "text",
+              "display_order_id": 1,
+              "locale": {
+                "en": {
+                  "label": "Lorem Ipsum 5",
+                  "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit ante consectetur consectetur varius. Nunc eros lorem, malesuada nec vulputate sed, volutpat ut massa. Sed faucibus viverra enim et varius. Cras pretium volutpat elit, a posuere libero pretium vitae. Cras posuere justo risus, in gravida leo iaculis eu. Nunc hendrerit ultricies efficitur. Praesent accumsan tellus ac purus rhoncus dictum. Sed ut pharetra libero, eget consectetur magna. In iaculis facilisis tincidunt. Vestibulum semper sem at justo sagittis posuere.</p><p>Nulla vitae viverra turpis. Quisque iaculis turpis purus, vulputate ultricies ipsum cursus nec. Aliquam tempor sagittis feugiat. Quisque et purus dignissim, sodales felis et, porta elit. Phasellus dapibus libero diam, id accumsan magna scelerisque id. Vivamus facilisis ex sit amet est congue ornare.</p>"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "display_order_id": 6,
+          "screen_rule_type": "required",
+          "screen_type_code": "content",
+          "content_layout_type": "right_small_flyout",
+          "screen_id": 7,
+          "assets": {
+            "icon": {
+              "name": "Birthday Cake Icon",
+              "width": 50,
+              "height": 50,
+              "src": "assets/icons/icon6.svg",
+              "constant": "icon"
+            }
+          },
+          "locale": {
+            "en": {
+              "title": "Label 6"
+            }
+          },
+          "objects": [
+            {
+              "asset_id": 6,
+              "show_title": true,
+              "progression": "continue",
+              "asset_type_code": "text",
+              "display_order_id": 1,
+              "locale": {
+                "en": {
+                  "label": "Lorem Ipsum 6",
+                  "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit ante consectetur consectetur varius. Nunc eros lorem, malesuada nec vulputate sed, volutpat ut massa. Sed faucibus viverra enim et varius. Cras pretium volutpat elit, a posuere libero pretium vitae. Cras posuere justo risus, in gravida leo iaculis eu. Nunc hendrerit ultricies efficitur. Praesent accumsan tellus ac purus rhoncus dictum. Sed ut pharetra libero, eget consectetur magna. In iaculis facilisis tincidunt. Vestibulum semper sem at justo sagittis posuere.</p><p>Nulla vitae viverra turpis. Quisque iaculis turpis purus, vulputate ultricies ipsum cursus nec. Aliquam tempor sagittis feugiat. Quisque et purus dignissim, sodales felis et, porta elit. Phasellus dapibus libero diam, id accumsan magna scelerisque id. Vivamus facilisis ex sit amet est congue ornare.</p>"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "display_order_id": 7,
+          "screen_rule_type": "required",
+          "screen_type_code": "content",
+          "content_layout_type": "right_small_flyout",
+          "screen_id": 8,
+          "assets": {
+            "icon": {
+              "name": "Trophy Icon",
+              "width": 50,
+              "height": 50,
+              "src": "assets/icons/icon7.svg",
+              "constant": "icon"
+            }
+          },
+          "locale": {
+            "en": {
+              "title": "Label 7"
+            }
+          },
+          "objects": [
+            {
+              "asset_id": 6,
+              "show_title": true,
+              "progression": "continue",
+              "asset_type_code": "text",
+              "display_order_id": 1,
+              "locale": {
+                "en": {
+                  "label": "Lorem Ipsum 7",
+                  "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit ante consectetur consectetur varius. Nunc eros lorem, malesuada nec vulputate sed, volutpat ut massa. Sed faucibus viverra enim et varius. Cras pretium volutpat elit, a posuere libero pretium vitae. Cras posuere justo risus, in gravida leo iaculis eu. Nunc hendrerit ultricies efficitur. Praesent accumsan tellus ac purus rhoncus dictum. Sed ut pharetra libero, eget consectetur magna. In iaculis facilisis tincidunt. Vestibulum semper sem at justo sagittis posuere.</p><p>Nulla vitae viverra turpis. Quisque iaculis turpis purus, vulputate ultricies ipsum cursus nec. Aliquam tempor sagittis feugiat. Quisque et purus dignissim, sodales felis et, porta elit. Phasellus dapibus libero diam, id accumsan magna scelerisque id. Vivamus facilisis ex sit amet est congue ornare.</p>"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "strings": {
+    "en": {
+      "continue_label": "Continue",
+      "done_label": "Done",
+      "close_label": "Close"
+    }
+  }
+}

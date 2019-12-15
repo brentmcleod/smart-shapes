@@ -1,3 +1,10 @@
+:root {
+  --active-color: #ffc000;
+  --active-hover-color: #ffde7b;
+  --complete-color: #2ea3ed;
+  --disabled-color: #a6a6a6;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -10,18 +17,58 @@ body {
 }
 
 svg {
-  background-color: lightcoral;
+  /* background-color: lightgray; */
+  /* overflow: visible; */
 }
 
 .App {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
 }
 
-.shape {
+.shape.not-started.disabled {
+  fill: var(--disabled-color);
+  cursor: not-allowed;
+}
+
+.shape.not-started.active {
+  fill: var(--active-color);
   cursor: pointer;
 }
 
-.shape:hover {
-  opacity: 0.7;
+.shape.complete {
+  fill: var(--complete-color);
+  cursor: default;
+}
+
+.shape.not-started.disabled .shape-icon-stem {
+  stroke: var(--disabled-color);
+}
+
+.shape.not-started.active .shape-icon-stem {
+  stroke: var(--active-color);
+}
+
+.shape.complete .shape-icon-stem {
+  stroke: var(--complete-color);
+}
+
+.shape.not-started.disabled .shape-indicator,
+.shape.not-started.active .shape-indicator {
+  visibility: hidden;
+}
+
+.shape.not-started.active:hover {
+  box-shadow: 0 0 10px #9ecaed;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.4));
+}
+
+.shape-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: white;
+  font-size: 24px;
 }

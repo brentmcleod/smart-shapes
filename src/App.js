@@ -1,10 +1,18 @@
 import React from "react";
-import SmartShapes from "./components/SmartShapes";
+import { useData } from "./hooks/useData";
+import SmartDiagram from "./components/SmartDiagram";
 
 function App() {
+  const [data, layouts, loading] = useData();
   return (
     <div className="App">
-      <SmartShapes />
+      {!loading && (
+        <SmartDiagram
+          layout={layouts.diagramLayout[data.screens[0].screen_display_type]}
+          shapes={data.screens[0].sub_screens}
+          shapeLayout={layouts.shapeLayout[data.screens[0].screen_display_type]}
+        />
+      )}
     </div>
   );
 }
