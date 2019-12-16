@@ -1,13 +1,11 @@
 import React from "react";
 
-const Indicator = ({ id, x = 0, y = 0, w = 24, h = 24 }) => {
+const Indicator = ({ id, x = 0, y = 0, w = 24, h = 24, rotate = 0 }) => {
   return (
-    <>
+    <svg x={x} y={y} width={h} height={h} viewBox={`0 0 ${w} ${h}`}>
       <defs>
         <pattern
           id={`indicator${id}`}
-          x={x}
-          y={y}
           width={w}
           height={h}
           patternUnits="userSpaceOnUse"
@@ -17,13 +15,12 @@ const Indicator = ({ id, x = 0, y = 0, w = 24, h = 24 }) => {
       </defs>
       <rect
         className="shape-indicator"
-        x={x}
-        y={y}
         width={w}
         height={h}
         fill={`url(#indicator${id})`}
+        transform={`rotate(-${rotate} ${w / 2} ${w / 2})`}
       />
-    </>
+    </svg>
   );
 };
 

@@ -22,6 +22,7 @@ const Arrow = ({
       viewBox={`0 0 ${bBoxWidth} ${bBoxHeight}`}
     >
       <path
+        className="arrow"
         d={`M 0,${overhang} h ${shaftLength} v -${overhang} l ${headLength},${headWidth /
           2} l -${headLength},${headWidth /
           2} v -${overhang} h -${shaftLength} z`}

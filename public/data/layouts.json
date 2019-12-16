@@ -52,6 +52,55 @@
           }
         }
       ]
+    },
+    "pie_chart": {
+      "x": 0,
+      "y": 0,
+      "w": 524,
+      "h": 524,
+      "deg": 0,
+      "offset": 0,
+      "assets": [
+        {
+          "type": "AtomicShape",
+          "props": {
+            "type": "Wedge",
+            "x": 12,
+            "y": 12,
+            "scale": 5
+          }
+        },
+        {
+          "type": "Icon",
+          "props": {
+            "x": 237,
+            "y": 24,
+            "w": 50,
+            "h": 50,
+            "scale": 1,
+            "scaleIcon": 1,
+            "stemLength": 0,
+            "stemWidth": 0,
+            "background": "none"
+          }
+        },
+        {
+          "type": "Indicator",
+          "props": {
+            "x": 250,
+            "y": 0
+          }
+        },
+        {
+          "type": "Label",
+          "props": {
+            "x": 212,
+            "y": 74,
+            "w": 100,
+            "h": 100
+          }
+        }
+      ]
     }
   },
   "diagramLayout": {
@@ -64,6 +113,17 @@
       "transforms": {
         "translate": "0,0 1,0 1,0 1,0 1,0 1,0 1,0",
         "rotate": "0 0 0 0 0 0 0"
+      }
+    },
+    "pie_chart": {
+      "x": 0,
+      "y": 0,
+      "w": 524,
+      "h": 524,
+      "assets": [],
+      "transforms": {
+        "translate": "0,0 0,0 0,0 0,0 0,0 0,0 0,0",
+        "rotate": "0 1 1 1 1 1 1"
       }
     }
   }

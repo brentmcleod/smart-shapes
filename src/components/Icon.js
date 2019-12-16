@@ -30,7 +30,10 @@ const icon = ({ id, x, y, w, h, ...props }) => {
           />
         </pattern>
       </defs>
-      <g className="shape-icon">
+      <g
+        className="shape-icon"
+        transform={`rotate(-${props.rotate} ${w / 2} ${w / 2})`}
+      >
         {props.stemLength > 0 && (
           <rect
             x={w / 2 - props.stemWidth}

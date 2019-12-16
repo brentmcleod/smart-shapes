@@ -23,8 +23,8 @@ const SmartShape = ({ id, shape, layout, ...props }) => {
             ? "not-started active"
             : "not-started disabled")
         }
-        transform={`translate(${props.translate}) rotate(${
-          props.rotate
+        transform={`translate(${layout.translate}) rotate(${
+          layout.rotate
         } ${layout.w / 2} ${layout.w / 2})`}
       >
         {layout.assets.map(asset => {
@@ -32,7 +32,13 @@ const SmartShape = ({ id, shape, layout, ...props }) => {
           return (
             <AssetWrapper
               key={asset.type + id}
-              {...{ id, shape, ...asset.props }}
+              {...{
+                id,
+                shape,
+                degrees: layout.degrees,
+                rotate: layout.rotate,
+                ...asset.props
+              }}
             />
           );
         })}

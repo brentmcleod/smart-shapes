@@ -16,10 +16,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-svg {
-  overflow: visible;
-}
-
 .App {
   margin-top: 20px;
 }
@@ -52,8 +48,14 @@ svg {
 .shape-label {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100%;
   color: white;
   font-size: 24px;
+}
+
+/* Atomic Shape CSS */
+
+.shape .wedge {
+  stroke: white;
 }
