@@ -11,19 +11,21 @@ const assets = {
   Label
 };
 
-const SmartShape = ({ id, current, shape, layout, ...props }) => {
+const SmartShape = ({ id, shape, layout, ...props }) => {
+  const { w } = layout;
   return (
-    <svg onClick={props.onClick}>
+    <svg onClick={() => props.onClick(id)}>
       <g
         className={
           "shape " +
-          (id < current
+          (id < props.current
             ? "complete"
-            : id === current
+            : id === props.current
             ? "not-started active"
             : "not-started disabled")
         }
-        transform={`translate(${layout.svgViewBox.w * id})`}
+        transform={`translate(${props.translate}) rotate(${props.rotate} ${w /
+          2} ${w / 2})`}
       >
         {layout.assets.map(asset => {
           const AssetWrapper = assets[asset.type];

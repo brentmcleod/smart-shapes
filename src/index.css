@@ -16,15 +16,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-svg {
-  /* background-color: lightgray; */
-  /* overflow: visible; */
-}
-
 .App {
   margin-top: 20px;
-  display: flex;
-  justify-content: center;
 }
 
 .shape.not-started.disabled {
