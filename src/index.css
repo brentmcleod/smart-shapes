@@ -16,6 +16,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+svg {
+  overflow: visible;
+}
+
 .App {
   margin-top: 20px;
 }
@@ -33,18 +37,6 @@ body {
 .shape.complete {
   fill: var(--complete-color);
   cursor: default;
-}
-
-.shape.not-started.disabled .shape-icon-stem {
-  stroke: var(--disabled-color);
-}
-
-.shape.not-started.active .shape-icon-stem {
-  stroke: var(--active-color);
-}
-
-.shape.complete .shape-icon-stem {
-  stroke: var(--complete-color);
 }
 
 .shape.not-started.disabled .shape-indicator,

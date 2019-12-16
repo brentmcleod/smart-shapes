@@ -32,13 +32,11 @@ const icon = ({ id, x, y, w, h, ...props }) => {
       </defs>
       <g className="shape-icon">
         {props.stemLength > 0 && (
-          <line
-            className="shape-icon-stem"
-            x1={w / 2}
-            y1={h}
-            x2={w / 2}
-            y2={h + props.stemLength}
-            strokeWidth={props.stemWidth}
+          <rect
+            x={w / 2 - props.stemWidth}
+            y={h}
+            width={props.stemWidth}
+            height={props.stemLength}
           />
         )}
         {props.background === "rectangle" ? (

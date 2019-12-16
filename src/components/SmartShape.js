@@ -12,7 +12,6 @@ const assets = {
 };
 
 const SmartShape = ({ id, shape, layout, ...props }) => {
-  const { w } = layout;
   return (
     <svg onClick={() => props.onClick(id)}>
       <g
@@ -24,8 +23,9 @@ const SmartShape = ({ id, shape, layout, ...props }) => {
             ? "not-started active"
             : "not-started disabled")
         }
-        transform={`translate(${props.translate}) rotate(${props.rotate} ${w /
-          2} ${w / 2})`}
+        transform={`translate(${props.translate}) rotate(${
+          props.rotate
+        } ${layout.w / 2} ${layout.w / 2})`}
       >
         {layout.assets.map(asset => {
           const AssetWrapper = assets[asset.type];
