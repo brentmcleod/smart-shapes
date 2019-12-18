@@ -12,21 +12,21 @@ const assets = {
 };
 
 const SmartShape = ({ id, shape, layout, ...props }) => {
+  const { x, y, w, h } = layout;
   return (
-    <svg onClick={() => props.onClick(id)}>
-      <g
-        className={
-          "shape " +
-          (id < props.current
-            ? "complete"
-            : id === props.current
-            ? "not-started active"
-            : "not-started disabled")
-        }
-        transform={`translate(${layout.translate}) rotate(${
-          layout.rotate
-        } ${layout.w / 2} ${layout.w / 2})`}
-      >
+    <g
+      className={
+        "shape " +
+        (id < props.current
+          ? "complete"
+          : id === props.current
+          ? "not-started active"
+          : "not-started disabled")
+      }
+      transform={`translate(${layout.translate}) rotate(${layout.rotate} ${x +
+        w / 2} ${y + h / 2})`}
+    >
+      <svg onClick={() => props.onClick(id)}>
         {layout.assets.map(asset => {
           const AssetWrapper = assets[asset.type];
           return (
@@ -42,8 +42,8 @@ const SmartShape = ({ id, shape, layout, ...props }) => {
             />
           );
         })}
-      </g>
-    </svg>
+      </svg>
+    </g>
   );
 };
 

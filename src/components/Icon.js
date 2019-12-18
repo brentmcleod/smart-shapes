@@ -7,33 +7,33 @@ const icon = ({ id, x, y, w, h, ...props }) => {
     iconY = 0 + (h - iconH) / 2;
 
   return (
-    <svg
-      x={x}
-      y={y}
-      width={`${w * props.scale}`}
-      height={`${(h + props.stemLength) * props.scale}`}
-      viewBox={`0 0 ${w} ${h + props.stemLength}`}
+    <g
+      className="shape-icon"
+      transform={`rotate(-${props.rotate} ${x + w / 2} ${y + h / 2})`}
     >
-      <defs>
-        <pattern
-          id={`icon${id}`}
-          x={iconX}
-          y={iconY}
-          width={iconW}
-          height={iconH}
-          patternUnits="userSpaceOnUse"
-        >
-          <image
-            href={props.shape.assets.icon.src}
+      <svg
+        x={x}
+        y={y}
+        width={`${w * props.scale}`}
+        height={`${(h + props.stemLength) * props.scale}`}
+        viewBox={`0 0 ${w} ${h + props.stemLength}`}
+      >
+        <defs>
+          <pattern
+            id={`icon${id}`}
+            x={iconX}
+            y={iconY}
             width={iconW}
             height={iconH}
-          />
-        </pattern>
-      </defs>
-      <g
-        className="shape-icon"
-        transform={`rotate(-${props.rotate} ${w / 2} ${w / 2})`}
-      >
+            patternUnits="userSpaceOnUse"
+          >
+            <image
+              href={props.shape.assets.icon.src}
+              width={iconW}
+              height={iconH}
+            />
+          </pattern>
+        </defs>
         {props.stemLength > 0 && (
           <rect
             x={w / 2 - props.stemWidth}
@@ -54,8 +54,8 @@ const icon = ({ id, x, y, w, h, ...props }) => {
           height={iconH}
           fill={`url(#icon${id})`}
         />
-      </g>
-    </svg>
+      </svg>
+    </g>
   );
 };
 

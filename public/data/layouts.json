@@ -1,12 +1,10 @@
 {
-  "shapeLayout": {
+  "shape_layout": {
     "arrows": {
       "x": 0,
       "y": 0,
       "w": 212,
       "h": 240,
-      "deg": 0,
-      "offset": 0,
       "assets": [
         {
           "type": "AtomicShape",
@@ -58,8 +56,6 @@
       "y": 0,
       "w": 524,
       "h": 524,
-      "deg": 0,
-      "offset": 0,
       "assets": [
         {
           "type": "AtomicShape",
@@ -103,7 +99,7 @@
       ]
     }
   },
-  "diagramLayout": {
+  "diagram_layout": {
     "arrows": {
       "x": 0,
       "y": 0,
@@ -112,6 +108,7 @@
       "assets": [],
       "transforms": {
         "translate": "0,0 1,0 1,0 1,0 1,0 1,0 1,0",
+        "use_rotate": false,
         "rotate": "0 0 0 0 0 0 0"
       }
     },
@@ -123,6 +120,7 @@
       "assets": [],
       "transforms": {
         "translate": "0,0 0,0 0,0 0,0 0,0 0,0 0,0",
+        "use_rotate": true,
         "rotate": "0 1 1 1 1 1 1"
       }
     }

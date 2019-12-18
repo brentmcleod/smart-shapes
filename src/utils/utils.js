@@ -13,11 +13,13 @@ export const plotTranslate = (w, h, coords) => {
   return plotPoints;
 };
 
-export const plotRotate = (deg, offset, coords) => {
+export const plotRotate = (degrees, offset, coords) => {
   const rotations = [];
   coords
     .split(" ")
-    .map((coord, index) => (index === 0 ? coord * deg + offset : coord * deg))
+    .map((coord, index) =>
+      index === 0 ? coord * degrees + offset : coord * degrees
+    )
     .reduce((prev, curr, index) => (rotations[index] = prev + curr), 0);
   return rotations;
 };

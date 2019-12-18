@@ -9,7 +9,11 @@ const atomicShapes = {
 
 const AtomicShape = props => {
   const ShapeWrapper = atomicShapes[props.type];
-  return <ShapeWrapper {...props} />;
+  return (
+    <g className="atomic-shape">
+      <ShapeWrapper {...props} />
+    </g>
+  );
 };
 
 export default AtomicShape;

@@ -2,16 +2,16 @@ import React from "react";
 
 const Label = ({ x, y, w, h, shape, ...props }) => {
   return (
-    <svg x={x} y={y} width={w} height={h} viewBox={`0 0 ${w} ${h}`}>
-      <g
-        className="shape-label-wrapper"
-        transform={`rotate(-${props.rotate} ${w / 2} ${w / 2})`}
-      >
-        <foreignObject width="100%" height="100%">
+    <g
+      className="shape-label-group"
+      transform={`rotate(-${props.rotate} ${x + w / 2} ${y + h / 2})`}
+    >
+      <foreignObject x={x} y={y} width={w} height={h}>
+        <div className="shape-label-wrapper">
           <div className="shape-label">{shape.locale.en.title}</div>
-        </foreignObject>
-      </g>
-    </svg>
+        </div>
+      </foreignObject>
+    </g>
   );
 };
 

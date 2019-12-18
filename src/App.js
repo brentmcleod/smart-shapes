@@ -8,9 +8,11 @@ function App() {
     <div className="App">
       {!loading && (
         <SmartDiagram
-          layout={layouts.diagramLayout[data.screens[0].screen_display_type]}
+          layout={layouts.diagram_layout[data.screens[0].screen_display_type]}
           shapes={data.screens[0].sub_screens}
-          shapeLayout={layouts.shapeLayout[data.screens[0].screen_display_type]}
+          shapeLayout={
+            layouts.shape_layout[data.screens[0].screen_display_type]
+          }
         />
       )}
     </div>
