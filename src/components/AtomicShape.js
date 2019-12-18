@@ -1,10 +1,12 @@
 import React from "react";
 import Arrow from "./atomic_shapes/Arrow";
+import Hexagon from "./atomic_shapes/Hexagon";
 import Wedge from "./atomic_shapes/Wedge";
 
 const atomicShapes = {
   Arrow,
-  Wedge
+  Wedge,
+  Hexagon
 };
 
 const AtomicShape = props => {
