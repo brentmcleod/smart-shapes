@@ -3,12 +3,12 @@ import React from "react";
 const Arrow = ({
   x,
   y,
+  scale = 1,
   shaftLength,
   shaftWidth,
   headLength,
   headWidth,
-  tailLength,
-  scale = 1
+  tailLength
 }) => {
   const bBoxWidth = shaftLength + headLength;
   const bBoxHeight = headWidth;

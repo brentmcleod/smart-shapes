@@ -1,12 +1,26 @@
 import React from "react";
 
-const Indicator = ({ id, x = 0, y = 0, w = 24, h = 24, rotate = 0 }) => {
+const Indicator = ({
+  id,
+  x = 0,
+  y = 0,
+  w = 24,
+  h = 24,
+  scale = 1,
+  ...props
+}) => {
   return (
     <g
       className="shape-indicator"
-      transform={`rotate(-${rotate} ${x + w / 2} ${y + h / 2})`}
+      transform={`rotate(-${0} ${x + w / 2} ${y + h / 2})`}
     >
-      <svg x={x} y={y} width={h} height={h} viewBox={`0 0 ${w} ${h}`}>
+      <svg
+        x={x}
+        y={y}
+        width={w * scale}
+        height={h * scale}
+        viewBox={`0 0 ${w} ${h}`}
+      >
         <defs>
           <pattern
             id={`indicator${id}`}

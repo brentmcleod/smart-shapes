@@ -1,38 +1,77 @@
 import React, { useState } from "react";
-import { plotTranslate, plotRotate } from "../utils/utils";
-import SmartShape from "./SmartShape";
+import { plotTransform } from "../utils/utils";
+import AtomicShape from "./AtomicShape";
+import Icon from "./Icon";
+import Indicator from "./Indicator";
+import Label from "./Label";
 
-const SmartDiagram = ({ layout, shapes, shapeLayout }) => {
+const assets = {
+  AtomicShape,
+  Icon,
+  Indicator,
+  Label
+};
+
+const SmartDiagram = ({ screen, layout }) => {
   const [current, setCurrent] = useState(0);
-  const plotPoints = plotTranslate(
-    shapeLayout.w,
-    shapeLayout.h,
-    layout.transforms.translate
-  );
-  const rotations = plotRotate(
-    layout.transforms.use_rotate ? 360 / shapes.length : 0,
-    layout.transforms.use_rotate ? 360 / shapes.length / 2 : 0,
-    layout.transforms.rotate
+  const shapes = screen.sub_screens.slice(0, layout.max_shapes);
+  const transform = plotTransform(
+    layout.transform,
+    layout.smart_shape.w,
+    layout.smart_shape.h,
+    shapes.length
   );
 
   const handleClick = id => id === current && setCurrent(current + 1);
 
   return (
-    <svg viewBox={`0 0 ${layout.w} ${layout.h}`}>
-      {shapes.map((shape, index) => (
-        <SmartShape
-          key={index}
-          id={index}
-          current={current}
-          shape={shape}
-          layout={{
-            ...shapeLayout,
-            degrees: 360 / shapes.length,
-            translate: plotPoints[index],
-            rotate: rotations[index]
-          }}
-          onClick={handleClick}
-        />
+    <svg viewBox={`0 0 ${layout.canvas.w} ${layout.canvas.h}`}>
+      <g className="background-assets">
+        {layout.other_assets.map((asset, id) => {
+          const AssetWrapper = assets[asset.type];
+          return <AssetWrapper key={"bg-asset" + id} {...asset.props} />;
+        })}
+      </g>
+      {shapes.map((shape, id) => (
+        <g
+          key={"shape" + id}
+          className={
+            "shape " +
+            screen.screen_display_type +
+            (id < current
+              ? " complete"
+              : id === current
+              ? " not-started active"
+              : " not-started disabled")
+          }
+          transform={`${transform.type}(${transform.values[id]}${
+            transform.type === "rotate" ? " " + transform.pivot : ""
+          })`}
+        >
+          <g
+            transform={
+              transform.type === "rotate" && transform.counter_at === "shape"
+                ? `rotate(-${transform.values[id]} ${transform.counter_pivot})`
+                : ""
+            }
+          >
+            <svg
+              x={layout.smart_shape.x}
+              y={layout.smart_shape.y}
+              onClick={() => handleClick(id)}
+            >
+              {layout.smart_shape.assets.map((asset, index) => {
+                const AssetWrapper = assets[asset.type];
+                return (
+                  <AssetWrapper
+                    key={"shape" + id + "-asset" + index}
+                    {...{ id, shape, transform, ...asset.props }}
+                  />
+                );
+              })}
+            </svg>
+          </g>
+        </g>
       ))}
     </svg>
   );

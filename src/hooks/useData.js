@@ -8,7 +8,7 @@ const useData = () => {
 
   const loadData = async () => {
     const response1 = await Axios.get("data/data.json");
-    const response2 = await Axios.get("data/layouts.json");
+    const response2 = await Axios.get("data/layouts2.json");
 
     setData(response1.data);
     setLayouts(response2.data);

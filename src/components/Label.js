@@ -4,7 +4,9 @@ const Label = ({ x, y, w, h, shape, ...props }) => {
   return (
     <g
       className="shape-label-group"
-      transform={`rotate(-${props.rotate} ${x + w / 2} ${y + h / 2})`}
+      transform={`rotate(-${
+        props.rotateOrigin === "shape" ? props.rotate : 0
+      } ${x + w / 2} ${y + h / 2})`}
     >
       <foreignObject x={x} y={y} width={w} height={h}>
         <div className="shape-label-wrapper">

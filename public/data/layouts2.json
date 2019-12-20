@@ -1,0 +1,196 @@
+{
+  "arrows": {
+    "canvas": {
+      "w": 1484,
+      "h": 240
+    },
+    "min_shapes": 0,
+    "max_shapes": 7,
+    "transform": {
+      "type": "translate",
+      "scalars": "0,0 1,0 1,0 1,0 1,0 1,0 1,0"
+    },
+    "smart_shape": {
+      "x": 0,
+      "y": 0,
+      "w": 212,
+      "h": 240,
+      "assets": [
+        {
+          "type": "Icon",
+          "props": {
+            "x": 60,
+            "y": 0,
+            "scale": 1.5,
+            "scaleIcon": 0.8,
+            "stemLength": 40,
+            "stemWidth": 1,
+            "background": "circle"
+          }
+        },
+        {
+          "type": "AtomicShape",
+          "props": {
+            "type": "Arrow",
+            "x": 12,
+            "y": 100,
+            "scale": 2,
+            "shaftLength": 60,
+            "shaftWidth": 40,
+            "headLength": 40,
+            "headWidth": 70,
+            "tailLength": 0
+          }
+        },
+        {
+          "type": "Label",
+          "props": {
+            "x": 16,
+            "y": 134,
+            "w": 150,
+            "h": 72
+          }
+        },
+        {
+          "type": "Indicator",
+          "props": {
+            "x": 0,
+            "y": 118
+          }
+        }
+      ]
+    },
+    "other_assets": []
+  },
+  "cycle": {
+    "canvas": {
+      "w": 600,
+      "h": 600
+    },
+    "min_shapes": 0,
+    "max_shapes": 7,
+    "transform": {
+      "type": "rotate",
+      "scalars": "0 1 1 1 1 1 1 1",
+      "pivot": "300 300",
+      "counter_at": "shape",
+      "counter_pivot": "300 60"
+    },
+    "smart_shape": {
+      "x": 240,
+      "y": 0,
+      "w": 120,
+      "h": 120,
+      "assets": [
+        {
+          "type": "AtomicShape",
+          "props": {
+            "type": "Circle",
+            "x": 0,
+            "y": 0,
+            "scale": 1.2
+          }
+        },
+        {
+          "type": "Label",
+          "props": {
+            "x": 15,
+            "y": 20,
+            "w": 90,
+            "h": 80
+          }
+        },
+        {
+          "type": "Icon",
+          "props": {
+            "x": 42,
+            "y": 3,
+            "scale": 0.75,
+            "scaleIcon": 1,
+            "stemLength": 0,
+            "stemWidth": 0,
+            "background": "none"
+          }
+        },
+        {
+          "type": "Indicator",
+          "props": {
+            "x": 0,
+            "y": 9
+          }
+        }
+      ]
+    },
+    "other_assets": [
+      {
+        "type": "AtomicShape",
+        "props": {
+          "type": "CycleArrow",
+          "x": 0,
+          "y": 0,
+          "scale": 6
+        }
+      }
+    ]
+  },
+  "honeycomb": {
+    "canvas": {
+      "w": 600,
+      "h": 568
+    },
+    "min_shapes": 0,
+    "max_shapes": 7,
+    "transform": {
+      "type": "translate",
+      "scalars": "0.5,0 1,0 -1.5,0.75 1,0 1,0 -1.5,0.75 1,0"
+    },
+    "smart_shape": {
+      "x": 0,
+      "y": 0,
+      "w": 200,
+      "h": 226,
+      "assets": [
+        {
+          "type": "AtomicShape",
+          "props": {
+            "type": "Hexagon",
+            "x": 0,
+            "y": 0,
+            "scale": 2,
+            "margin": 2
+          }
+        },
+        {
+          "type": "Label",
+          "props": {
+            "x": 10,
+            "y": 60,
+            "w": 180,
+            "h": 110
+          }
+        },
+        {
+          "type": "Icon",
+          "props": {
+            "x": 68,
+            "y": 18,
+            "scale": 1.25,
+            "scaleIcon": 1,
+            "stemLength": 0,
+            "stemWidth": 0,
+            "background": "none"
+          }
+        },
+        {
+          "type": "Indicator",
+          "props": {
+            "x": 4,
+            "y": 54,
+            "scale": 1.25
+          }
+        }
+      ]
+    },
+    "other_assets": []
+  }
+}
