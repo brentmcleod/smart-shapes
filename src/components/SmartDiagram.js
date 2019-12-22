@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { plotTransform } from "../utils/utils";
 import AtomicShape from "./AtomicShape";
+import DiagramLabel from "./DiagramLabel";
 import Icon from "./Icon";
 import Indicator from "./Indicator";
-import Label from "./Label";
+import ShapeLabel from "./ShapeLabel";
 
 const assets = {
   AtomicShape,
+  DiagramLabel,
   Icon,
   Indicator,
-  Label
+  ShapeLabel
 };
 
 const SmartDiagram = ({ screen, layout }) => {
@@ -17,9 +19,10 @@ const SmartDiagram = ({ screen, layout }) => {
   const shapes = screen.sub_screens.slice(0, layout.max_shapes);
   const transform = plotTransform(
     layout.transform,
-    layout.smart_shape.w,
-    layout.smart_shape.h,
-    shapes.length
+    layout.shape.w,
+    layout.shape.h,
+    shapes.length,
+    layout.shape.margin
   );
 
   const handleClick = id => id === current && setCurrent(current + 1);
@@ -56,16 +59,24 @@ const SmartDiagram = ({ screen, layout }) => {
             }
           >
             <svg
-              x={layout.smart_shape.x}
-              y={layout.smart_shape.y}
+              x={layout.shape.x}
+              y={layout.shape.y}
               onClick={() => handleClick(id)}
             >
-              {layout.smart_shape.assets.map((asset, index) => {
+              {layout.shape.assets.map((asset, index) => {
                 const AssetWrapper = assets[asset.type];
                 return (
                   <AssetWrapper
                     key={"shape" + id + "-asset" + index}
-                    {...{ id, shape, transform, ...asset.props }}
+                    {...{
+                      id,
+                      shape,
+                      sw: layout.shape.w,
+                      sh: layout.shape.h,
+                      transform,
+                      degrees: 360 / shapes.length,
+                      ...asset.props
+                    }}
                   />
                 );
               })}

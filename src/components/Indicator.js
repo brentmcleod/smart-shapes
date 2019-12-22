@@ -6,17 +6,23 @@ const Indicator = ({
   y = 0,
   w = 24,
   h = 24,
+  sw,
+  sh,
   scale = 1,
-  ...props
+  transform
 }) => {
   return (
     <g
       className="shape-indicator"
-      transform={`rotate(-${0} ${x + w / 2} ${y + h / 2})`}
+      transform={
+        transform.type === "rotate" && transform.counter_at === "component"
+          ? `rotate(-${transform.values[id]} ${x + w / 2} ${y + h / 2})`
+          : ""
+      }
     >
       <svg
-        x={x}
-        y={y}
+        x={x === "centre" ? sw / 2 - (w * scale) / 2 : x}
+        y={y === "centre" ? sh / 2 - (h * scale) / 2 : y}
         width={w * scale}
         height={h * scale}
         viewBox={`0 0 ${w} ${h}`}

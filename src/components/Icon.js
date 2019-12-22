@@ -1,6 +1,17 @@
 import React from "react";
 
-const icon = ({ id, x = 0, y = 0, w = 48, h = 48, ...props }) => {
+const icon = ({
+  id,
+  x = 0,
+  y = 0,
+  w = 48,
+  h = 48,
+  sw,
+  sh,
+  scale,
+  transform,
+  ...props
+}) => {
   const iconW = w * props.scaleIcon,
     iconH = h * props.scaleIcon,
     iconX = 0 + (w - iconW) / 2,
@@ -9,15 +20,17 @@ const icon = ({ id, x = 0, y = 0, w = 48, h = 48, ...props }) => {
   return (
     <g
       className="shape-icon"
-      transform={`rotate(-${
-        props.rotateOrigin === "shape" ? props.rotate : 0
-      } ${x + w / 2} ${y + h / 2})`}
+      transform={
+        transform.type === "rotate" && transform.counter_at === "component"
+          ? `rotate(-${transform.values[id]} ${x + w / 2} ${y + h / 2})`
+          : ""
+      }
     >
       <svg
-        x={x}
-        y={y}
-        width={`${w * props.scale}`}
-        height={`${(h + props.stemLength) * props.scale}`}
+        x={x === "centre" ? sw / 2 - (w * scale) / 2 : x}
+        y={y === "centre" ? sh / 2 - (h * scale) / 2 : y}
+        width={`${w * scale}`}
+        height={`${(h + props.stemLength) * scale}`}
         viewBox={`0 0 ${w} ${h + props.stemLength}`}
       >
         <defs>

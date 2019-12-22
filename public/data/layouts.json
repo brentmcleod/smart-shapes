@@ -1,32 +1,27 @@
 {
-  "shape_layout": {
-    "arrows": {
+  "arrows": {
+    "canvas": {
+      "w": 1484,
+      "h": 240
+    },
+    "min_shapes": 0,
+    "max_shapes": 7,
+    "transform": {
+      "type": "translate",
+      "scalars": "0,0 1,0 1,0 1,0 1,0 1,0 1,0"
+    },
+    "shape": {
       "x": 0,
       "y": 0,
       "w": 212,
       "h": 240,
+      "margin": 0,
       "assets": [
-        {
-          "type": "AtomicShape",
-          "props": {
-            "type": "Arrow",
-            "x": 12,
-            "y": 100,
-            "shaftLength": 60,
-            "shaftWidth": 40,
-            "headLength": 40,
-            "headWidth": 70,
-            "tailLength": 0,
-            "scale": 2
-          }
-        },
         {
           "type": "Icon",
           "props": {
-            "x": 57,
+            "x": 60,
             "y": 0,
-            "w": 50,
-            "h": 50,
             "scale": 1.5,
             "scaleIcon": 0.8,
             "stemLength": 40,
@@ -35,44 +30,84 @@
           }
         },
         {
+          "type": "AtomicShape",
+          "props": {
+            "type": "Arrow",
+            "x": 12,
+            "y": 100,
+            "scale": 2,
+            "shaftLength": 60,
+            "shaftWidth": 40,
+            "headLength": 40,
+            "headWidth": 70,
+            "tailLength": 0
+          }
+        },
+        {
+          "type": "ShapeLabel",
+          "props": {
+            "x": 16,
+            "y": 134,
+            "w": 150,
+            "h": 72
+          }
+        },
+        {
           "type": "Indicator",
           "props": {
             "x": 0,
             "y": 118
           }
-        },
-        {
-          "type": "Label",
-          "props": {
-            "x": 16,
-            "y": 134,
-            "w": 140,
-            "h": 72
-          }
         }
       ]
     },
-    "cycle": {
-      "x": 0,
-      "y": 0,
+    "other_assets": []
+  },
+  "cycle": {
+    "canvas": {
       "w": 600,
-      "h": 600,
-      "scale": 1,
+      "h": 600
+    },
+    "min_shapes": 0,
+    "max_shapes": 7,
+    "transform": {
+      "type": "rotate",
+      "scalars": "0 1 1 1 1 1 1 1",
+      "pivot": "300 300",
+      "counter_at": "shape",
+      "counter_pivot": "300 60"
+    },
+    "shape": {
+      "x": 240,
+      "y": 0,
+      "w": 120,
+      "h": 120,
+      "margin": 0,
       "assets": [
         {
           "type": "AtomicShape",
           "props": {
             "type": "Circle",
-            "x": 250,
-            "y": 0
+            "x": 0,
+            "y": 0,
+            "scale": 1.2
+          }
+        },
+        {
+          "type": "ShapeLabel",
+          "props": {
+            "x": "centre",
+            "y": 20,
+            "w": 90,
+            "h": 80
           }
         },
         {
           "type": "Icon",
           "props": {
-            "x": 288,
-            "y": 6,
-            "scale": 0.5,
+            "x": "centre",
+            "y": 3,
+            "scale": 0.75,
             "scaleIcon": 1,
             "stemLength": 0,
             "stemWidth": 0,
@@ -82,26 +117,41 @@
         {
           "type": "Indicator",
           "props": {
-            "x": 3,
-            "y": 3
-          }
-        },
-        {
-          "type": "Label",
-          "props": {
-            "x": 10,
-            "y": 20,
-            "w": 80,
-            "h": 60
+            "x": 0,
+            "y": 9
           }
         }
       ]
     },
-    "honeycomb": {
+    "other_assets": [
+      {
+        "type": "AtomicShape",
+        "props": {
+          "type": "CycleArrow",
+          "x": 0,
+          "y": 0,
+          "scale": 6
+        }
+      }
+    ]
+  },
+  "honeycomb": {
+    "canvas": {
+      "w": 616,
+      "h": 584
+    },
+    "min_shapes": 0,
+    "max_shapes": 7,
+    "transform": {
+      "type": "translate",
+      "scalars": "0.5,0 1,0 -1.5,0.75 1,0 1,0 -1.5,0.75 1,0"
+    },
+    "shape": {
       "x": 0,
       "y": 0,
-      "w": 184,
-      "h": 204,
+      "w": 200,
+      "h": 226,
+      "margin": 8,
       "assets": [
         {
           "type": "AtomicShape",
@@ -109,18 +159,24 @@
             "type": "Hexagon",
             "x": 0,
             "y": 0,
-            "margin": 1,
             "scale": 2
+          }
+        },
+        {
+          "type": "ShapeLabel",
+          "props": {
+            "x": "centre",
+            "y": 60,
+            "w": 180,
+            "h": 110
           }
         },
         {
           "type": "Icon",
           "props": {
-            "x": 67,
-            "y": 16,
-            "w": 50,
-            "h": 50,
-            "scale": 1,
+            "x": "centre",
+            "y": 18,
+            "scale": 1.25,
             "scaleIcon": 1,
             "stemLength": 0,
             "stemWidth": 0,
@@ -130,26 +186,167 @@
         {
           "type": "Indicator",
           "props": {
-            "x": 6,
-            "y": 48
-          }
-        },
-        {
-          "type": "Label",
-          "props": {
-            "x": 6,
-            "y": 50,
-            "w": 168,
-            "h": 100
+            "x": 4,
+            "y": 54,
+            "scale": 1.25
           }
         }
       ]
     },
-    "pie_chart": {
+    "other_assets": []
+  },
+  "matrix": {
+    "canvas": {
+      "w": 524,
+      "h": 524
+    },
+    "min_shapes": 0,
+    "max_shapes": 4,
+    "transform": {
+      "type": "translate",
+      "scalars": "0,0 1,0 -1,1 1,0"
+    },
+    "shape": {
+      "x": 96,
+      "y": 20,
+      "w": 200,
+      "h": 200,
+      "margin": 8,
+      "assets": [
+        {
+          "type": "AtomicShape",
+          "props": {
+            "type": "Rectangle",
+            "x": 0,
+            "y": 0,
+            "w": 200,
+            "h": 200
+          }
+        },
+        {
+          "type": "ShapeLabel",
+          "props": {
+            "x": "centre",
+            "y": 70,
+            "w": 180,
+            "h": 120
+          }
+        },
+        {
+          "type": "Icon",
+          "props": {
+            "x": "centre",
+            "y": 6,
+            "scale": 1.25,
+            "scaleIcon": 1,
+            "stemLength": 0,
+            "stemWidth": 0,
+            "background": "none"
+          }
+        },
+        {
+          "type": "Indicator",
+          "props": {
+            "x": 17,
+            "y": 17,
+            "scale": 1.25
+          }
+        }
+      ]
+    },
+    "other_assets": [
+      {
+        "type": "DiagramLabel",
+        "props": {
+          "label": "Axis 1 Label",
+          "x": 96,
+          "y": 484,
+          "w": 408,
+          "h": 40,
+          "background": "axis",
+          "ax": 20
+        }
+      },
+      {
+        "type": "DiagramLabel",
+        "props": {
+          "label": "Dimension 1.1",
+          "x": 96,
+          "y": 436,
+          "w": 200,
+          "h": 40,
+          "background": "rectangle"
+        }
+      },
+      {
+        "type": "DiagramLabel",
+        "props": {
+          "label": "Dimension 1.2",
+          "x": 304,
+          "y": 436,
+          "w": 200,
+          "h": 40,
+          "background": "rectangle"
+        }
+      },
+      {
+        "type": "DiagramLabel",
+        "props": {
+          "label": "Axis 2 Label",
+          "x": -180,
+          "y": 204,
+          "w": 408,
+          "h": 40,
+          "background": "axis",
+          "ax": 20,
+          "rotate": -90
+        }
+      },
+      {
+        "type": "DiagramLabel",
+        "props": {
+          "label": "Dimension 2.1",
+          "x": -30,
+          "y": 100,
+          "w": 200,
+          "h": 40,
+          "background": "rectangle",
+          "rotate": -90
+        }
+      },
+      {
+        "type": "DiagramLabel",
+        "props": {
+          "label": "Dimension 2.2",
+          "x": -30,
+          "y": 308,
+          "w": 200,
+          "h": 40,
+          "background": "rectangle",
+          "rotate": -90
+        }
+      }
+    ]
+  },
+  "pie_chart": {
+    "canvas": {
+      "w": 524,
+      "h": 524
+    },
+    "min_shapes": 0,
+    "max_shapes": 5,
+    "transform": {
+      "type": "rotate",
+      "scalars": "0.5 1 1 1 1 1 1 1",
+      "pivot": "262 262",
+      "counter_at": "component"
+    },
+    "shape": {
       "x": 0,
       "y": 0,
       "w": 524,
       "h": 524,
+      "margin": 0,
       "assets": [
         {
           "type": "AtomicShape",
@@ -161,12 +358,19 @@
           }
         },
         {
+          "type": "ShapeLabel",
+          "props": {
+            "x": 212,
+            "y": 72,
+            "w": 100,
+            "h": 100
+          }
+        },
+        {
           "type": "Icon",
           "props": {
-            "x": 237,
+            "x": 238,
             "y": 24,
-            "w": 50,
-            "h": 50,
             "scale": 1,
             "scaleIcon": 1,
             "stemLength": 0,
@@ -178,25 +382,31 @@
           "type": "Indicator",
           "props": {
             "x": 250,
-            "y": 0
-          }
-        },
-        {
-          "type": "Label",
-          "props": {
-            "x": 212,
-            "y": 74,
-            "w": 100,
-            "h": 100
+            "y": 0,
+            "scale": 1
           }
         }
       ]
     },
-    "pyramid": {
+    "other_assets": []
+  },
+  "pyramid": {
+    "canvas": {
+      "w": 650,
+      "h": 500
+    },
+    "min_shapes": 0,
+    "max_shapes": 7,
+    "transform": {
+      "type": "translate",
+      "scalars": "0,0 0,1 0,1 0,1 0,1 0,1 0,1"
+    },
+    "shape": {
       "x": 250,
       "y": 20,
-      "w": 500,
+      "w": 400,
       "h": 68,
+      "margin": 0,
       "assets": [
         {
           "type": "AtomicShape",
@@ -204,18 +414,25 @@
             "type": "Rectangle",
             "x": 0,
             "y": 0,
-            "w": 500,
+            "w": 400,
             "h": 60,
             "rx": 8
           }
         },
         {
+          "type": "ShapeLabel",
+          "props": {
+            "x": 60,
+            "y": 6,
+            "w": 280,
+            "h": 48
+          }
+        },
+        {
           "type": "Icon",
           "props": {
-            "x": 10,
-            "y": 5,
-            "w": 50,
-            "h": 50,
+            "x": 6,
+            "y": 6,
             "scale": 1,
             "scaleIcon": 1,
             "stemLength": 0,
@@ -226,103 +443,23 @@
         {
           "type": "Indicator",
           "props": {
-            "x": 452,
+            "x": 352,
             "y": 12,
             "scale": 1.5
           }
-        },
-        {
-          "type": "Label",
-          "props": {
-            "x": 72,
-            "y": 5,
-            "w": 378,
-            "h": 50
-          }
         }
       ]
-    }
-  },
-  "diagram_layout": {
-    "arrows": {
-      "x": 0,
-      "y": 0,
-      "w": 1484,
-      "h": 240,
-      "assets": [],
-      "transforms": {
-        "translate": "0,0 1,0 1,0 1,0 1,0 1,0 1,0",
-        "use_rotate": false,
-        "rotate": "0 0 0 0 0 0 0"
-      }
     },
-    "cycle": {
-      "x": 0,
-      "y": 0,
-      "w": 600,
-      "h": 600,
-      "assets": [
-        {
-          "type": "AtomicShape",
-          "props": {
-            "type": "CycleArrow",
-            "x": 0,
-            "y": 0,
-            "scale": 6
-          }
+    "other_assets": [
+      {
+        "type": "AtomicShape",
+        "props": {
+          "type": "Triangle",
+          "x": 0,
+          "y": 0,
+          "scale": 5
         }
-      ],
-      "transforms": {
-        "translate": "0,0 0,0 0,0 0,0 0,0 0,0 0,0",
-        "use_rotate": true,
-        "rotate": "0 1 1 1 1 1 1"
       }
-    },
-    "honeycomb": {
-      "x": 0,
-      "y": 0,
-      "w": 548,
-      "h": 508,
-      "assets": [],
-      "transforms": {
-        "translate": "0.5,0 1,0 -1.5,0.75 1,0 1,0 -1.5,0.75 1,0",
-        "use_rotate": false,
-        "rotate": "0 0 0 0 0 0 0"
-      }
-    },
-    "pie_chart": {
-      "x": 0,
-      "y": 0,
-      "w": 524,
-      "h": 524,
-      "assets": [],
-      "transforms": {
-        "translate": "0,0 0,0 0,0 0,0 0,0 0,0 0,0",
-        "use_rotate": true,
-        "rotate": "0 1 1 1 1 1 1"
-      }
-    },
-    "pyramid": {
-      "x": 0,
-      "y": 0,
-      "w": 750,
-      "h": 500,
-      "assets": [
-        {
-          "type": "AtomicShape",
-          "props": {
-            "type": "Triangle",
-            "x": 0,
-            "y": 0,
-            "scale": 5
-          }
-        }
-      ],
-      "transforms": {
-        "translate": "0,0 0,1 0,1 0,1 0,1 0,1 0,1",
-        "use_rotate": false,
-        "rotate": "0 0 0 0 0 0 0"
-      }
-    }
+    ]
   }
 }

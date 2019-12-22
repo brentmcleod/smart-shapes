@@ -1,13 +1,13 @@
 import React from "react";
 
-const Hexagon = ({ x, y, margin = 0, scale = 1 }) => {
+const Hexagon = ({ x, y, scale = 1 }) => {
   return (
     <svg
       x={x}
       y={y}
       width={`${100 * scale}`}
       height={`${114 * scale}`}
-      viewBox={`0 0 ${100 + margin} ${114 + margin}`}
+      viewBox={`0 0 ${100} ${114}`}
     >
       <path
         className="hexagon"

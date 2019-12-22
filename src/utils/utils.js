@@ -1,4 +1,4 @@
-export const plotTransform = (transform, width, height, length) => {
+export const plotTransform = (transform, width, height, length, margin) => {
   const values = [];
   switch (transform.type) {
     case "translate":
@@ -8,7 +8,7 @@ export const plotTransform = (transform, width, height, length) => {
           x
             .split(",")
             .map((coord, index) =>
-              index === 0 ? coord * width : coord * height
+              index === 0 ? coord * (width + margin) : coord * (height + margin)
             )
         )
         .reduce(
@@ -27,8 +27,4 @@ export const plotTransform = (transform, width, height, length) => {
     // no default
   }
   return { ...transform, values };
-};
-
-export const resizeArray = (arr, maxLength) => {
-  return arr.length > maxLength ? (arr.length = maxLength) : arr;
 };
