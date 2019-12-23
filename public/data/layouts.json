@@ -1,4 +1,89 @@
 {
+  "arc": {
+    "canvas": {
+      "w": 1424,
+      "h": 600
+    },
+    "min_shapes": 0,
+    "max_shapes": 6,
+    "transform": {
+      "type": "rotate",
+      "scalars": "0 1 1 1 1 1 1 1",
+      "total_degrees": 70,
+      "offset": 90,
+      "pivot": "0 300",
+      "counter_at": "shape",
+      "counter_pivot": "0 -200"
+    },
+    "clipping_path": {
+      "props": {
+        "y3": 600,
+        "cx": 700,
+        "cy": 300,
+        "radius": 500,
+        "arc": 74
+      }
+    },
+    "shape": {
+      "x": 164,
+      "y": -236,
+      "w": 536,
+      "h": 72,
+      "margin": 0,
+      "assets": [
+        {
+          "type": "AtomicShape",
+          "props": {
+            "type": "Rectangle",
+            "x": 36,
+            "y": 6,
+            "w": 624,
+            "h": 60
+          }
+        },
+        {
+          "type": "ShapeLabel",
+          "props": {
+            "x": 86,
+            "y": 12,
+            "w": 400,
+            "h": 48
+          }
+        },
+        {
+          "type": "Icon",
+          "props": {
+            "x": 0,
+            "y": 0,
+            "scale": 1.5,
+            "scaleIcon": 0.8,
+            "stemLength": 0,
+            "stemWidth": 0,
+            "background": "circle"
+          }
+        },
+        {
+          "type": "Indicator",
+          "props": {
+            "x": 500,
+            "y": 24
+          }
+        }
+      ]
+    },
+    "other_assets": [
+      {
+        "type": "AtomicShape",
+        "props": {
+          "type": "Arc",
+          "cx": 200,
+          "cy": 300,
+          "radius": 500,
+          "arc": 72
+        }
+      }
+    ]
+  },
   "arrows": {
     "canvas": {
       "w": 1484,
@@ -73,6 +158,8 @@
     "transform": {
       "type": "rotate",
       "scalars": "0 1 1 1 1 1 1 1",
+      "total_degrees": 360,
+      "offset": 0,
       "pivot": "300 300",
       "counter_at": "shape",
       "counter_pivot": "300 60"
@@ -334,10 +421,12 @@
       "h": 524
     },
     "min_shapes": 0,
-    "max_shapes": 5,
+    "max_shapes": 7,
     "transform": {
       "type": "rotate",
       "scalars": "0.5 1 1 1 1 1 1 1",
+      "total_degrees": 360,
+      "offset": 0,
       "pivot": "262 262",
       "counter_at": "component"
     },

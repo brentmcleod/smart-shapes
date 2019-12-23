@@ -5,7 +5,7 @@
       "display_order_id": 1,
       "progression": "linear",
       "screen_type": "smart_diagram",
-      "screen_display_type": "honeycomb",
+      "screen_display_type": "arc",
       "include_instructions": true,
       "locale": {
         "en": {

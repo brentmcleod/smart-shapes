@@ -18,9 +18,18 @@ export const plotTransform = (transform, width, height, length, margin) => {
         );
       break;
     case "rotate":
+      const degrees = transform.total_degrees / length;
       transform.scalars
         .split(" ")
-        .map(coord => coord * (360 / length))
+        .map(
+          (coord, index) =>
+            (index === 0 && transform.offset > 0
+              ? transform.offset -
+                Math.floor(length / 2) * degrees +
+                (length % 2 === 0 ? degrees / 2 : 0)
+              : 0) +
+            coord * degrees
+        )
         .reduce((prev, curr, index) => (values[index] = prev + curr), 0);
       break;
     default:

@@ -1,4 +1,5 @@
 import React from "react";
+import Arc from "./atomic_shapes/Arc";
 import Arrow from "./atomic_shapes/Arrow";
 import Circle from "./atomic_shapes/Circle";
 import CycleArrow from "./atomic_shapes/CycleArrow";
@@ -8,6 +9,7 @@ import Triangle from "./atomic_shapes/Triangle";
 import Wedge from "./atomic_shapes/Wedge";
 
 const atomicShapes = {
+  Arc,
   Arrow,
   Circle,
   CycleArrow,
