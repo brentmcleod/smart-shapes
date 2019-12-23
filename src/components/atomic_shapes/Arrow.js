@@ -26,7 +26,7 @@ const Arrow = ({
         className="arrow"
         d={`M 0,${overhang} h ${shaftLength} v -${overhang} l ${headLength},${headWidth /
           2} l -${headLength},${headWidth /
-          2} v -${overhang} h -${shaftLength} l ${tailLength},${shaftWidth /
+          2} v -${overhang} h -${shaftLength} l ${tailLength},-${shaftWidth /
           2} z`}
       />
     </svg>

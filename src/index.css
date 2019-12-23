@@ -21,6 +21,35 @@ body {
   font-size: 100%;
 }
 
+button {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  box-sizing: content-box;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.btn-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8rem;
+  height: 2.5rem;
+  margin: 0 auto;
+  color: white;
+  background-color: #bd3185;
+  border-radius: 6px;
+  font-size: 1.25rem;
+}
+
+svg {
+  overflow: visible;
+}
+
+/* Class CSS */
+
 .App {
   margin: 1.5rem;
 }
@@ -46,33 +75,54 @@ body {
   outline: none;
 }
 
-.shape a:focus .atomic-shape,
-.shape a:hover .atomic-shape {
-  stroke: blue;
-}
-
-.shape svg {
-  overflow: visible;
+.shape.not-started.disabled .shape-indicator,
+.shape.not-started.active .shape-indicator {
+  visibility: hidden;
 }
 
 .shape.not-started.disabled {
   fill: var(--disabled-color);
+  transition: fill 300ms ease-in-out;
   cursor: not-allowed;
 }
 
 .shape.not-started.active {
   fill: var(--active-color);
+  transition: fill 300ms ease-in-out;
   cursor: pointer;
 }
 
 .shape.complete {
   fill: var(--complete-color);
+  transition: fill 300ms ease-in-out;
   cursor: default;
 }
 
-.shape.not-started.disabled .shape-indicator,
-.shape.not-started.active .shape-indicator {
-  visibility: hidden;
+.shape.not-started.disabled:hover {
+  fill: var(--disabled-color-lighter);
+  transition: fill 300ms ease-in-out;
+}
+
+.shape.not-started.active:hover {
+  fill: var(--active-color-lighter);
+  transition: fill 300ms ease-in-out;
+}
+
+.shape.complete:hover {
+  fill: var(--complete-color-lighter);
+  transition: fill 300ms ease-in-out;
+}
+
+.shape.not-started.disabled a:focus .atomic-shape,
+.shape.not-started.disabled a:focus .shape-icon circle,
+.shape.complete a:focus .atomic-shape,
+.shape.complete a:focus .shape-icon circle {
+  filter: url(#soft-glow-blue);
+}
+
+.shape.not-started.active a:focus .atomic-shape,
+.shape.not-started.active a:focus .shape-icon circle {
+  filter: url(#soft-glow-yellow);
 }
 
 .shape-label-wrapper {
@@ -146,21 +196,68 @@ body {
 
 /* Pie Chart Diagram */
 
-.shape.not-started.disabled a:focus .wedge,
-.shape.not-started.disabled a:hover .wedge {
-  fill: var(--disabled-color-lighter);
+.shape.pie.not-started.disabled a:focus .shape-icon circle,
+.shape.pie.complete a:focus .shape-icon circle {
+  filter: url(#soft-glow-blue);
 }
 
-.shape.not-started.active a:focus .wedge,
-.shape.not-started.active a:hover .wedge {
-  fill: var(--active-color-lighter);
+.shape.pie.not-started.active a:focus .shape-icon circle {
+  filter: url(#soft-glow-yellow);
 }
 
-.shape.complete a:focus .wedge,
-.shape.complete a:hover .wedge {
-  fill: var(--complete-color-lighter);
+.shape.pie.not-started.disabled a:focus .atomic-shape,
+.shape.pie.not-started.active a:focus .atomic-shape,
+.shape.pie.complete a:focus .atomic-shape {
+  filter: none;
 }
 
 .wedge {
   stroke: white;
+}
+
+/* Flyout Content CSS */
+
+.flyout-content-background {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: visibility 0ms ease-in-out 300ms;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 2;
+}
+
+.flyout-content-background.active {
+  visibility: visible;
+  transition: visibility 0ms ease-in-out;
+}
+
+.flyout-content {
+  position: absolute;
+  right: -400px;
+  width: 400px;
+  height: 100%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: right 300ms ease-in-out;
+  z-index: inherit;
+}
+
+.flyout-content-background.active .flyout-content {
+  right: 0;
+  transition: right 300ms ease-in-out;
+}
+
+.flyout-content h2,
+.flyout-content p {
+  margin: 0;
+  padding: 24px;
+}
+
+.flyout-content h2 {
+  color: white;
+  background-color: #2ea3ed;
 }

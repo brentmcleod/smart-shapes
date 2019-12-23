@@ -459,7 +459,7 @@
       }
     ]
   },
-  "pie_chart": {
+  "pie": {
     "canvas": {
       "w": 524,
       "h": 524
@@ -505,10 +505,10 @@
             "x": 238,
             "y": 24,
             "scale": 1,
-            "scaleIcon": 1,
+            "scaleIcon": 0.8,
             "stemLength": 0,
             "stemWidth": 0,
-            "background": "none"
+            "background": "circle"
           }
         },
         {

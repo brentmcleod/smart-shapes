@@ -7,6 +7,7 @@ import Icon from "./Icon";
 import Indicator from "./Indicator";
 import ShapeLabel from "./ShapeLabel";
 import ClipPath from "./ClipPath";
+import SoftGlow from "./SoftGlow";
 
 const assets = {
   AtomicShape,
@@ -17,7 +18,7 @@ const assets = {
   ShapeLabel
 };
 
-const SmartDiagram = ({ screen, layout }) => {
+const SmartDiagram = ({ screen, layout, showContent }) => {
   const [current, setCurrent] = useState(0);
   const shapes = screen.sub_screens.slice(0, layout.max_shapes);
   const transform = plotTransform(
@@ -28,7 +29,12 @@ const SmartDiagram = ({ screen, layout }) => {
     layout.shape.margin
   );
 
-  const handleClick = id => id === current && setCurrent(current + 1);
+  const handleClick = (id, shape) => {
+    if (id === current) {
+      setCurrent(current + 1);
+      showContent(shape);
+    }
+  };
 
   return (
     <svg
@@ -36,6 +42,7 @@ const SmartDiagram = ({ screen, layout }) => {
       viewBox={`0 0 ${layout.canvas.w} ${layout.canvas.h}`}
     >
       <defs>
+        <SoftGlow />
         {layout.clipping_path && <ClipPath {...layout.clipping_path.props} />}
       </defs>
       <g clipPath="url(#clipping-path)">
@@ -77,7 +84,7 @@ const SmartDiagram = ({ screen, layout }) => {
               <a
                 className="shape-button"
                 href="#"
-                onClick={() => handleClick(id)}
+                onClick={() => handleClick(id, shape)}
               >
                 <svg x={layout.shape.x} y={layout.shape.y}>
                   {layout.shape.assets.map((asset, index) => {
