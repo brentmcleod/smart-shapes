@@ -27,27 +27,28 @@ const CycleArrow = ({
       height={`${100 * scale}`}
       viewBox={`0 0 ${100} ${100}`}
     >
-      <defs>
-        <marker
-          id="arrowhead"
-          viewBox="0 0 4 6"
-          refX="2"
-          refY="3"
-          markerWidth={2}
-          markerHeight={2}
-          orient="auto-start-reverse"
-          strokeWidth="0"
-        >
-          <path d="M 0 0 L 4 3 L 0 6 z" />
-        </marker>
-      </defs>
-      <path
-        className="cycle-arrow"
-        d={`M${x1},${y1} A${radius},${radius} 0 ${longArc},1 ${x2},${y2}`}
-        markerEnd="url(#arrowhead)"
-        fill="none"
-        strokeWidth="5"
-      />
+      <g className="cycle-arrow-group">
+        <defs>
+          <marker
+            id="arrowhead"
+            viewBox="0 0 4 6"
+            refX="2"
+            refY="3"
+            markerWidth={2}
+            markerHeight={2}
+            orient="auto-start-reverse"
+            strokeWidth="0"
+          >
+            <path d="M 0 0 L 4 3 L 0 6 z" />
+          </marker>
+        </defs>
+        <path
+          className="cycle-arrow"
+          d={`M${x1},${y1} A${radius},${radius} 0 ${longArc},1 ${x2},${y2}`}
+          markerEnd="url(#arrowhead)"
+          strokeWidth="5"
+        />
+      </g>
     </svg>
   );
 };

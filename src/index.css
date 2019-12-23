@@ -5,6 +5,8 @@
   --complete-color-lighter: #82c4ee;
   --disabled-color: #a6a6a6;
   --disabled-color-lighter: #dddddd;
+  --bg-accent-color1: #d99b3e;
+  --bg-accent-color2: #345071;
 }
 
 body {
@@ -21,6 +23,32 @@ body {
 
 .App {
   margin: 1.5rem;
+}
+
+.diagram-label-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.diagram-label-group {
+  fill: var(--bg-accent-color2);
+  stroke: none;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.shape a {
+  fill: inherit;
+  outline: none;
+}
+
+.shape a:focus .atomic-shape,
+.shape a:hover .atomic-shape {
+  stroke: blue;
 }
 
 .shape svg {
@@ -65,6 +93,16 @@ body {
 
 /* Arc Diagram */
 
+.background-assets .arc {
+  stroke: var(--bg-accent-color2);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.smart-diagram.arc .diagram-label {
+  font-size: 1.75rem;
+}
+
 .shape.arc .shape-label {
   font-size: 2rem;
 }
@@ -84,41 +122,45 @@ body {
   stroke: var(--complete-color);
 }
 
-/* Atomic Shape CSS */
+/* Cycle Diagram */
 
-.wedge {
-  stroke: white;
+.smart-diagram.cycle .diagram-label {
+  font-size: 1.5rem;
 }
 
-/* Background Assets CSS */
-.diagram-label-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-}
-
-.diagram-label-group {
-  fill: #345071;
-  stroke: none;
-  color: white;
-  font-size: 1rem;
-  text-align: center;
-}
-
-.background-assets .triangle {
-  fill: #d99b3e;
-  stroke: none;
+.background-assets .cycle-arrow-group {
+  fill: var(--bg-accent-color2);
+  stroke: var(--bg-accent-color2);
 }
 
 .background-assets .cycle-arrow {
-  fill: #345071;
-  stroke: #345071;
+  fill: none;
 }
 
-.background-assets .arc {
-  stroke: #345071;
-  stroke-width: 4;
-  stroke-linecap: round;
+/* Pyramid Diagram */
+
+.background-assets .triangle {
+  fill: var(--bg-accent-color1);
+  stroke: none;
+}
+
+/* Pie Chart Diagram */
+
+.shape.not-started.disabled a:focus .wedge,
+.shape.not-started.disabled a:hover .wedge {
+  fill: var(--disabled-color-lighter);
+}
+
+.shape.not-started.active a:focus .wedge,
+.shape.not-started.active a:hover .wedge {
+  fill: var(--active-color-lighter);
+}
+
+.shape.complete a:focus .wedge,
+.shape.complete a:hover .wedge {
+  fill: var(--complete-color-lighter);
+}
+
+.wedge {
+  stroke: white;
 }

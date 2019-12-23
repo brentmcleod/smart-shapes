@@ -5,7 +5,7 @@
       "h": 600
     },
     "min_shapes": 0,
-    "max_shapes": 6,
+    "max_shapes": 7,
     "transform": {
       "type": "rotate",
       "scalars": "0 1 1 1 1 1 1 1",
@@ -72,6 +72,28 @@
       ]
     },
     "other_assets": [
+      {
+        "type": "DiagramImage",
+        "props": {
+          "x": 260,
+          "y": 100,
+          "w": 240,
+          "h": 340,
+          "src": "assets/character.png"
+        }
+      },
+      {
+        "type": "DiagramLabel",
+        "props": {
+          "label": "Customer",
+          "x": 260,
+          "y": 420,
+          "w": 240,
+          "h": 60,
+          "background": "rectangle",
+          "rx": 8
+        }
+      },
       {
         "type": "AtomicShape",
         "props": {
@@ -211,6 +233,28 @@
       ]
     },
     "other_assets": [
+      {
+        "type": "DiagramImage",
+        "props": {
+          "x": 210,
+          "y": 130,
+          "w": 180,
+          "h": 280,
+          "src": "assets/character.png"
+        }
+      },
+      {
+        "type": "DiagramLabel",
+        "props": {
+          "label": "Customer",
+          "x": 210,
+          "y": 380,
+          "w": 180,
+          "h": 60,
+          "background": "rectangle",
+          "rx": 8
+        }
+      },
       {
         "type": "AtomicShape",
         "props": {
