@@ -288,15 +288,19 @@ svg {
 .controls select {
   width: 10rem;
   height: 2.5rem;
-  margin-right: 12px;
+  margin: 0 12px;
   border-radius: 6px;
   font-size: 1.25rem;
+}
+
+.controls .select-count {
+  width: 3rem;
 }
 
 .btn-refresh {
   width: 10rem;
   height: 2.5rem;
-  margin-left: 12px;
+  margin: 0 12px;
   color: white;
   background-color: #bd3185;
   border-radius: 6px;

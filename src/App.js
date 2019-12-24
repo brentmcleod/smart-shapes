@@ -8,6 +8,7 @@ function App() {
   const [id, setId] = useState(1);
   const [data, layouts, loading] = useData();
   const [displayType, setDisplayType] = useState("arrows");
+  const [shapeCount, setShapeCount] = useState(7);
   const [content, setContent] = useState(null);
 
   const handleRefresh = () => setId(id + 1);
@@ -23,16 +24,29 @@ function App() {
 
   const handleChangeType = e => {
     setDisplayType(e.target.value);
+    e.target.value === "matrix" ? setShapeCount(4) : setShapeCount(7);
+    handleRefresh();
+  };
+
+  const handleChangeCount = e => {
+    setShapeCount(e.target.value);
     handleRefresh();
   };
 
   return (
     <div className="App">
-      <Controls refresh={handleRefresh} changeType={handleChangeType} />
+      <Controls
+        refresh={handleRefresh}
+        currentType={displayType}
+        currentCount={shapeCount}
+        changeType={handleChangeType}
+        changeCount={handleChangeCount}
+      />
       {!loading && (
         <SmartDiagram
           key={id}
           displayType={displayType}
+          shapeCount={shapeCount}
           screen={data.screens[0]}
           layout={layouts[displayType]} //data.screens[0].screen_display_type
           showContent={handleShowContent}

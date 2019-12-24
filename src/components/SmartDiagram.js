@@ -18,9 +18,18 @@ const assets = {
   ShapeLabel
 };
 
-const SmartDiagram = ({ screen, layout, displayType, showContent }) => {
+const SmartDiagram = ({
+  screen,
+  layout,
+  displayType,
+  shapeCount,
+  showContent
+}) => {
   const [current, setCurrent] = useState(0);
-  const shapes = screen.sub_screens.slice(0, layout.max_shapes);
+  const shapes =
+    displayType === "matrix"
+      ? screen.sub_screens.slice(0, 4)
+      : screen.sub_screens.slice(0, shapeCount);
   const transform = plotTransform(
     layout.transform,
     layout.shape.w,
