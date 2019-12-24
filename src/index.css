@@ -216,25 +216,24 @@ svg {
 /* Flyout Content CSS */
 
 .flyout-content-background {
-  visibility: hidden;
   position: fixed;
+  display: none;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  transition: visibility 0ms ease-in-out 300ms;
   overflow-x: hidden;
   overflow-y: auto;
   z-index: 1;
 }
 
 .flyout-content-background.active {
-  visibility: visible;
-  transition: visibility 0ms ease-in-out;
+  display: block;
 }
 
 .flyout-content {
   position: absolute;
+  top: 0;
   right: -400px;
   width: 400px;
   height: 100vh;
@@ -244,7 +243,7 @@ svg {
   z-index: inherit;
 }
 
-.flyout-content-background.active .flyout-content {
+.flyout-content.active {
   right: 0;
   transition: right 300ms ease-in-out;
 }

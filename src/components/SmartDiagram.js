@@ -46,7 +46,7 @@ const SmartDiagram = ({ screen, layout, displayType, showContent }) => {
           <SoftGlow />
           {layout.clipping_path && <ClipPath {...layout.clipping_path.props} />}
         </defs>
-        <g clipPath="url(#clipping-path)">
+        <g clipPath={layout.clipping_path && "url(#clipping-path)"}>
           <g className="background-assets">
             {layout.other_assets.map((asset, id) => {
               const AssetWrapper = assets[asset.type];
