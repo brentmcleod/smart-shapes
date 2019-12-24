@@ -11,9 +11,12 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
+  position: relative;
+  height: 100vh;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -27,7 +30,7 @@ body {
 }
 
 body.modal-open {
-  /* overflow-y: hidden; */
+  overflow-y: hidden;
 }
 
 /* Remove Button CSS */
@@ -49,7 +52,13 @@ svg {
 /* Class CSS */
 
 .App {
-  margin: 1.5rem;
+  margin: 0.5rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .App {
+    margin: 1rem;
+  }
 }
 
 .diagram-label-wrapper {
@@ -216,34 +225,43 @@ svg {
 /* Flyout Content CSS */
 
 .flyout-content-background {
+  visibility: hidden;
   position: fixed;
-  display: none;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
+  transition: visibility 0ms linear 300ms;
   z-index: 1;
 }
 
 .flyout-content-background.active {
-  display: block;
+  visibility: visible;
+  transition: visibility 0ms linear;
 }
 
 .flyout-content {
   position: absolute;
   top: 0;
-  right: -400px;
-  width: 400px;
+  right: -700px;
+  width: 100%;
   height: 100vh;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition: right 300ms ease-in-out;
+  overflow-x: hidden;
   z-index: inherit;
 }
 
-.flyout-content.active {
+@media only screen and (min-width: 600px) {
+  .flyout-content {
+    width: 400px;
+  }
+}
+
+.flyout-content-background.active .flyout-content {
   right: 0;
   transition: right 300ms ease-in-out;
 }
@@ -265,14 +283,14 @@ svg {
   justify-content: center;
   width: 8rem;
   height: 2.5rem;
-  margin: 0 auto;
+  margin: 1rem auto 3rem auto;
   color: white;
   background-color: #bd3185;
   border-radius: 6px;
   font-size: 1.25rem;
 }
 
-.btn-action:hover {
+.btn-continue:hover {
   filter: brightness(110%);
 }
 
@@ -286,25 +304,28 @@ svg {
 }
 
 .controls select {
-  width: 10rem;
+  width: 9rem;
   height: 2.5rem;
-  margin: 0 12px;
   border-radius: 6px;
   font-size: 1.25rem;
 }
 
 .controls .select-count {
-  width: 3rem;
+  width: 4rem;
+  margin: 0 6px;
 }
 
 .btn-refresh {
-  width: 10rem;
+  width: 9rem;
   height: 2.5rem;
-  margin: 0 12px;
   color: white;
   background-color: #bd3185;
   border-radius: 6px;
   font-size: 1.25rem;
+}
+
+.btn-refresh:hover {
+  filter: brightness(110%);
 }
 
 /* Smart Diagram Max Widths */
@@ -322,11 +343,11 @@ svg {
 }
 
 .smart-diagram-wrapper.cycle {
-  max-width: 750px;
+  max-width: 700px;
 }
 
 .smart-diagram-wrapper.honeycomb {
-  max-width: 800px;
+  max-width: 700px;
 }
 
 .smart-diagram-wrapper.matrix {
@@ -334,7 +355,7 @@ svg {
 }
 
 .smart-diagram-wrapper.pie {
-  max-width: 750px;
+  max-width: 700px;
 }
 
 .smart-diagram-wrapper.pyramid {

@@ -8,24 +8,25 @@ const FlyoutContent = ({ content, hideContent }) => {
           "flyout-content-background " + (content ? "active" : "disabled")
         }
         onClick={() => hideContent()}
-      ></div>
-      <div
-        className={"flyout-content " + (content ? "active" : "disabled")}
-        onClick={e => e.stopPropagation()}
       >
-        {content && (
-          <>
-            <h2>{content.objects[0].locale.en.label}</h2>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: content.objects[0].locale.en.description
-              }}
-            />
-            <button className="btn-continue" onClick={() => hideContent()}>
-              Continue
-            </button>
-          </>
-        )}
+        <div
+          className={"flyout-content " + (content ? "active" : "disabled")}
+          onClick={e => e.stopPropagation()}
+        >
+          {content && (
+            <>
+              <h2>{content.objects[0].locale.en.label}</h2>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: content.objects[0].locale.en.description
+                }}
+              />
+              <button className="btn-continue" onClick={() => hideContent()}>
+                Continue
+              </button>
+            </>
+          )}
+        </div>
       </div>
     </>
   );
