@@ -18,7 +18,7 @@ const SoftGlow = () => {
           result="thicken"
         />
         <feGaussianBlur in="thicken" stdDeviation="5" result="blurred" />
-        <feFlood flood-color="rgb(0, 220,255)" result="glowColor" />
+        <feFlood floodColor="rgb(0, 220,255)" result="glowColor" />
         <feComposite
           in="glowColor"
           in2="blurred"
@@ -45,7 +45,7 @@ const SoftGlow = () => {
           result="thicken"
         />
         <feGaussianBlur in="thicken" stdDeviation="5" result="blurred" />
-        <feFlood flood-color="rgb(255,255,0)" result="glowColor" />
+        <feFlood floodColor="rgb(255,255,0)" result="glowColor" />
         <feComposite
           in="glowColor"
           in2="blurred"

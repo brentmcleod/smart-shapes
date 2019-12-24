@@ -17,7 +17,7 @@ const FlyoutContent = ({ content, hideContent }) => {
                 __html: content.objects[0].locale.en.description
               }}
             />
-            <button className="btn-action" onClick={() => hideContent()}>
+            <button className="btn-continue" onClick={() => hideContent()}>
               Continue
             </button>
           </>

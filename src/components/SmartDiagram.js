@@ -18,7 +18,7 @@ const assets = {
   ShapeLabel
 };
 
-const SmartDiagram = ({ screen, layout, showContent }) => {
+const SmartDiagram = ({ screen, layout, displayType, showContent }) => {
   const [current, setCurrent] = useState(0);
   const shapes = screen.sub_screens.slice(0, layout.max_shapes);
   const transform = plotTransform(
@@ -37,80 +37,83 @@ const SmartDiagram = ({ screen, layout, showContent }) => {
   };
 
   return (
-    <svg
-      className={"smart-diagram " + screen.screen_display_type}
-      viewBox={`0 0 ${layout.canvas.w} ${layout.canvas.h}`}
-    >
-      <defs>
-        <SoftGlow />
-        {layout.clipping_path && <ClipPath {...layout.clipping_path.props} />}
-      </defs>
-      <g clipPath="url(#clipping-path)">
-        <g className="background-assets">
-          {layout.other_assets.map((asset, id) => {
-            const AssetWrapper = assets[asset.type];
-            return (
-              <AssetWrapper
-                key={"bg-asset" + id}
-                {...{ id: "bg-asset" + id, ...asset.props }}
-              />
-            );
-          })}
-        </g>
-        {shapes.map((shape, id) => (
-          <g
-            key={"shape" + id}
-            className={
-              "shape " +
-              screen.screen_display_type +
-              (id < current
-                ? " complete"
-                : id === current
-                ? " not-started active"
-                : " not-started disabled")
-            }
-            transform={`${transform.type}(${transform.values[id]}${
-              transform.type === "rotate" ? " " + transform.pivot : ""
-            })`}
-          >
-            <g
-              transform={
-                transform.type === "rotate" && transform.counter_at === "shape"
-                  ? `rotate(-${transform.values[id]} ${transform.counter_pivot})`
-                  : ""
-              }
-            >
-              {/* eslint-disable-next-line */}
-              <a
-                className="shape-button"
-                href="#"
-                onClick={() => handleClick(id, shape)}
-              >
-                <svg x={layout.shape.x} y={layout.shape.y}>
-                  {layout.shape.assets.map((asset, index) => {
-                    const AssetWrapper = assets[asset.type];
-                    return (
-                      <AssetWrapper
-                        key={"shape" + id + "-asset" + index}
-                        {...{
-                          id,
-                          shape,
-                          sw: layout.shape.w,
-                          sh: layout.shape.h,
-                          transform,
-                          degrees: 360 / shapes.length,
-                          ...asset.props
-                        }}
-                      />
-                    );
-                  })}
-                </svg>
-              </a>
-            </g>
+    <div className={"smart-diagram-wrapper " + displayType}>
+      <svg
+        className={"smart-diagram " + displayType}
+        viewBox={`0 0 ${layout.canvas.w} ${layout.canvas.h}`}
+      >
+        <defs>
+          <SoftGlow />
+          {layout.clipping_path && <ClipPath {...layout.clipping_path.props} />}
+        </defs>
+        <g clipPath="url(#clipping-path)">
+          <g className="background-assets">
+            {layout.other_assets.map((asset, id) => {
+              const AssetWrapper = assets[asset.type];
+              return (
+                <AssetWrapper
+                  key={"bg-asset" + id}
+                  {...{ id: "bg-asset" + id, ...asset.props }}
+                />
+              );
+            })}
           </g>
-        ))}
-      </g>
-    </svg>
+          {shapes.map((shape, id) => (
+            <g
+              key={"shape" + id}
+              className={
+                "shape " +
+                displayType +
+                (id < current
+                  ? " complete"
+                  : id === current
+                  ? " not-started active"
+                  : " not-started disabled")
+              }
+              transform={`${transform.type}(${transform.values[id]}${
+                transform.type === "rotate" ? " " + transform.pivot : ""
+              })`}
+            >
+              <g
+                transform={
+                  transform.type === "rotate" &&
+                  transform.counter_at === "shape"
+                    ? `rotate(-${transform.values[id]} ${transform.counter_pivot})`
+                    : ""
+                }
+              >
+                {/* eslint-disable-next-line */}
+                <a
+                  className="shape-button"
+                  href="#"
+                  onClick={() => handleClick(id, shape)}
+                >
+                  <svg x={layout.shape.x} y={layout.shape.y}>
+                    {layout.shape.assets.map((asset, index) => {
+                      const AssetWrapper = assets[asset.type];
+                      return (
+                        <AssetWrapper
+                          key={"shape" + id + "-asset" + index}
+                          {...{
+                            id,
+                            shape,
+                            sw: layout.shape.w,
+                            sh: layout.shape.h,
+                            transform,
+                            degrees: 360 / shapes.length,
+                            ...asset.props
+                          }}
+                        />
+                      );
+                    })}
+                  </svg>
+                </a>
+              </g>
+            </g>
+          ))}
+        </g>
+      </svg>
+    </div>
   );
 };
 

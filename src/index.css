@@ -9,6 +9,10 @@
   --bg-accent-color2: #345071;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -19,7 +23,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 100%;
+  overflow-x: hidden;
 }
+
+body.modal-open {
+  /* overflow-y: hidden; */
+}
+
+/* Remove Button CSS */
 
 button {
   margin: 0;
@@ -29,19 +40,6 @@ button {
   box-sizing: content-box;
   font-family: inherit;
   cursor: pointer;
-}
-
-.btn-action {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 8rem;
-  height: 2.5rem;
-  margin: 0 auto;
-  color: white;
-  background-color: #bd3185;
-  border-radius: 6px;
-  font-size: 1.25rem;
 }
 
 svg {
@@ -222,12 +220,12 @@ svg {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   transition: visibility 0ms ease-in-out 300ms;
   overflow-x: hidden;
   overflow-y: auto;
-  z-index: 2;
+  z-index: 1;
 }
 
 .flyout-content-background.active {
@@ -239,7 +237,7 @@ svg {
   position: absolute;
   right: -400px;
   width: 400px;
-  height: 100%;
+  height: 100vh;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition: right 300ms ease-in-out;
@@ -260,4 +258,82 @@ svg {
 .flyout-content h2 {
   color: white;
   background-color: #2ea3ed;
+}
+
+.btn-continue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8rem;
+  height: 2.5rem;
+  margin: 0 auto;
+  color: white;
+  background-color: #bd3185;
+  border-radius: 6px;
+  font-size: 1.25rem;
+}
+
+.btn-action:hover {
+  filter: brightness(110%);
+}
+
+/* Controls CSS */
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px 0 24px 0;
+}
+
+.controls select {
+  width: 10rem;
+  height: 2.5rem;
+  margin-right: 12px;
+  border-radius: 6px;
+  font-size: 1.25rem;
+}
+
+.btn-refresh {
+  width: 10rem;
+  height: 2.5rem;
+  margin-left: 12px;
+  color: white;
+  background-color: #bd3185;
+  border-radius: 6px;
+  font-size: 1.25rem;
+}
+
+/* Smart Diagram Max Widths */
+
+.smart-diagram-wrapper {
+  margin: 0 auto;
+}
+
+.smart-diagram-wrapper.arc {
+  max-width: 2000px;
+}
+
+.smart-diagram-wrapper.arrows {
+  max-width: 2000px;
+}
+
+.smart-diagram-wrapper.cycle {
+  max-width: 750px;
+}
+
+.smart-diagram-wrapper.honeycomb {
+  max-width: 800px;
+}
+
+.smart-diagram-wrapper.matrix {
+  max-width: 700px;
+}
+
+.smart-diagram-wrapper.pie {
+  max-width: 750px;
+}
+
+.smart-diagram-wrapper.pyramid {
+  max-width: 800px;
 }
